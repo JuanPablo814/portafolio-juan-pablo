@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan Pablo González Martínez | Portafolio de Ingeniería Informática</title>
+  <meta name="description" content="Portafolio de Juan Pablo González Martínez, estudiante de Ingeniería Informática en el ITESI con enfoque en servidores, redes y ciberseguridad.">
+  <meta name="author" content="Juan Pablo González Martínez">
+  <meta name="theme-color" content="#0E1726">
+  <meta property="og:title" content="Juan Pablo González Martínez, portafolio">
+  <meta property="og:description" content="Servidores, bases de datos y desarrollo web. Proyectos, habilidades y contacto.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/mala-fama-games-inicio.webp">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="Juan Pablo González Martínez, ir al inicio">
+        <img src="assets/img/favicon.svg" width="36" height="36" alt="">
+        <span>Juan Pablo González</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="visually-hidden">Abrir menú</span>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav id="menu" class="site-nav" aria-label="Principal">
+        <ul>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#trayectoria">Trayectoria</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Hero -->
+    <section id="inicio" class="hero" aria-labelledby="hero-titulo">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-titulo">Juan Pablo González Martínez</h1>
+          <p class="hero-role">Estudiante de Ingeniería Informática, con enfoque en servidores, redes y ciberseguridad.</p>
+          <p class="hero-value">Configuro servidores y muevo datos entre sistemas para que las aplicaciones funcionen de forma estable. Trabajo con Windows Server, Ubuntu Server, SQL Server, SSIS y Git.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="docs/CV-Juan-Pablo-Gonzalez-Martinez.pdf" download>Descargar CV en PDF</a>
+            <a class="btn btn-secondary" href="https://github.com/JuanPablo814" target="_blank" rel="noopener">Ver mi GitHub</a>
+            <a class="btn btn-link" href="#contacto">Escríbeme</a>
+          </div>
+        </div>
+
+        <figure class="hero-map">
+          <svg class="topology" viewBox="0 0 520 460" role="group" aria-labelledby="mapa-titulo mapa-desc">
+            <title id="mapa-titulo">Mapa de mis áreas de trabajo</title>
+            <desc id="mapa-desc">Juan Pablo al centro, conectado con servidores, bases de datos, desarrollo web y control de versiones. Cada nodo lleva a una sección de la página.</desc>
+            <g class="grid-lines" aria-hidden="true">
+              <path d="M0 115H520M0 230H520M0 345H520M130 0V460M260 0V460M390 0V460"/>
+            </g>
+            <g class="links" aria-hidden="true" fill="none" stroke-width="3" stroke-linecap="round">
+              <path pathLength="1" class="l1" d="M260 230L100 100" stroke="#5B8DFF"/>
+              <path pathLength="1" class="l2" d="M260 230L430 90" stroke="#FF8A3D"/>
+              <path pathLength="1" class="l3" d="M260 230L440 370" stroke="#3DD6A0"/>
+              <path pathLength="1" class="l4" d="M260 230L90 380" stroke="#E6C84F"/>
+            </g>
+            <a href="#habilidades" class="node n1">
+              <circle cx="100" cy="100" r="58" fill="#14223A" stroke="#5B8DFF" stroke-width="3"/>
+              <text x="100" y="96" text-anchor="middle" class="t-main">Servidores</text>
+              <text x="100" y="116" text-anchor="middle" class="t-sub">Windows, Ubuntu</text>
+            </a>
+            <a href="#habilidades" class="node n2">
+              <circle cx="430" cy="90" r="58" fill="#14223A" stroke="#FF8A3D" stroke-width="3"/>
+              <text x="430" y="86" text-anchor="middle" class="t-main">Datos</text>
+              <text x="430" y="106" text-anchor="middle" class="t-sub">SQL Server, SSIS</text>
+            </a>
+            <a href="#proyectos" class="node n3">
+              <circle cx="440" cy="370" r="58" fill="#14223A" stroke="#3DD6A0" stroke-width="3"/>
+              <text x="440" y="366" text-anchor="middle" class="t-main">Web</text>
+              <text x="440" y="386" text-anchor="middle" class="t-sub">HTML, CSS, PHP</text>
+            </a>
+            <a href="#proyectos" class="node n4">
+              <circle cx="90" cy="380" r="58" fill="#14223A" stroke="#E6C84F" stroke-width="3"/>
+              <text x="90" y="376" text-anchor="middle" class="t-main">Equipo</text>
+              <text x="90" y="396" text-anchor="middle" class="t-sub">Git y GitHub</text>
+            </a>
+            <g class="node-center">
+              <circle cx="260" cy="230" r="58" fill="#E8EEF7"/>
+              <text x="260" y="242" text-anchor="middle" class="t-center">JP</text>
+            </g>
+          </svg>
+          <figcaption class="visually-hidden">Mapa visual de mis áreas de trabajo.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="section" aria-labelledby="proyectos-titulo">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="proyectos-titulo">Proyectos</h2>
+          <p>Cinco trabajos reales de la carrera. Cada uno dice qué problema resuelve y con qué herramientas se hizo. El color de la franja indica el tipo: azul para web en equipo, naranja para infraestructura.</p>
+        </header>
+
+        <div class="projects">
+          <!-- 1. Mala Fama Games (destacado) -->
+          <article class="project project-featured kind-web" aria-labelledby="p1-titulo">
+            <img class="project-shot" src="assets/img/mala-fama-games-inicio.webp" width="1200" height="580" loading="lazy" decoding="async" alt="Página de inicio de Mala Fama Games, una tienda de juegos de PS5 con catálogo y preventas.">
+            <div class="project-body">
+              <h3 id="p1-titulo">Mala Fama Games</h3>
+              <p class="project-problem">Una tienda de juegos de PS5 necesita vender en físico y digital, controlar el inventario y mostrar reportes de ventas. Lo construimos en equipo como un punto de venta completo con pagos simulados.</p>
+              <p class="project-role"><strong>Mi parte:</strong> panel de administración con reportes, cuentas de cliente y páginas legales.</p>
+              <ul class="tags" aria-label="Tecnologías">
+                <li>PHP</li><li>MySQL</li><li>JavaScript</li><li>CSS</li><li>Chart.js</li><li>Git y GitHub</li>
+              </ul>
+              <div class="project-actions">
+                <button type="button" class="btn btn-primary" data-open-modal="modal-mala-fama">Ver arquitectura y resultados</button>
+                <a class="btn btn-secondary" href="https://github.com/alejandrosanch3z010-ui/malafama-games" target="_blank" rel="noopener">Código en GitHub</a>
+                <span class="note">Demo: solo en local, aún en desarrollo</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Servidor Windows -->
+          <article class="project kind-infra" aria-labelledby="p2-titulo">
+            <img class="project-shot" src="assets/img/servidor-windows.svg" width="1200" height="580" loading="lazy" alt="Diagrama: un cliente se conecta por HTTP al sitio de IIS y por FTP al sitio FTP_Servidor, dentro de una máquina virtual con Windows Server.">
+            <div class="project-body">
+              <h3 id="p2-titulo">Sitio web y servidor FTP en Windows Server</h3>
+              <p class="project-problem">Publicar una página web con dominio propio y dejar que varios usuarios suban archivos por FTP a una carpeta compartida. Instalé el rol de servidor web (IIS), creé el sitio y configuré el sitio FTP con su grupo de usuarios.</p>
+              <ul class="tags" aria-label="Tecnologías">
+                <li>Windows Server</li><li>IIS</li><li>FTP</li><li>Máquina virtual</li><li>Dominio</li>
+              </ul>
+              <div class="project-actions">
+                <span class="note">Práctica de Administración de servidores, documentada en un reporte. Sin repositorio ni demo públicos.</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Codex 616 -->
+          <article class="project kind-web" aria-labelledby="p3-titulo">
+            <img class="project-shot" src="assets/img/codex-616.webp" width="1200" height="579" loading="lazy" alt="Página de inicio de Códex 616, un archivo de héroes del cómic con 22 personajes y 8 categorías.">
+            <div class="project-body">
+              <h3 id="p3-titulo">Códex 616</h3>
+              <p class="project-problem">Un archivo para explorar personajes del universo Marvel: origen, poderes y estadísticas. Tiene filtros por categoría, buscador, fichas detalladas y una selección de tres favoritos.</p>
+              <p class="project-role">Proyecto del equipo Mala Fama Crew.</p>
+              <ul class="tags" aria-label="Tecnologías">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Hostinger</li>
+              </ul>
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="https://codex616.malafamacrew.com/" target="_blank" rel="noopener">Ver demo en línea</a>
+                <span class="note">Repositorio no público</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Hotel Nébula -->
+          <article class="project kind-web" aria-labelledby="p4-titulo">
+            <img class="project-shot" src="assets/img/hotel-nebula.webp" width="1200" height="580" loading="lazy" alt="Página de inicio de Hotel Nébula, un hotel boutique de cuatro estrellas en Irapuato.">
+            <div class="project-body">
+              <h3 id="p4-titulo">Hotel Nébula</h3>
+              <p class="project-problem">Sitio de un hotel boutique con 45 habitaciones. Muestra las cuatro categorías de habitación con su precio y tiene un formulario de reserva que calcula el total estimado de la estancia.</p>
+              <p class="project-role">Proyecto académico.</p>
+              <ul class="tags" aria-label="Tecnologías">
+                <li>PHP</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="project-actions">
+                <span class="note">Demo: solo en local. Repositorio no público</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Galería arte urbano -->
+          <article class="project kind-web" aria-labelledby="p5-titulo">
+            <img class="project-shot" src="assets/img/galeria-arte-urbano.webp" width="1200" height="579" loading="lazy" alt="Página de inicio de la galería web de arte urbano de Mala Fama, con un búho de grafiti.">
+            <div class="project-body">
+              <h3 id="p5-titulo">Galería de arte urbano</h3>
+              <p class="project-problem">Un museo web que explica qué es el arte urbano. Recorre sus características, exponentes como Banksy y obras, e incluye una línea del tiempo del movimiento.</p>
+              <p class="project-role">Proyecto del equipo Mala Fama Crew.</p>
+              <ul class="tags" aria-label="Tecnologías">
+                <li>PHP</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="project-actions">
+                <span class="note">Demo: solo en local. Repositorio no público</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="section section-alt" aria-labelledby="habilidades-titulo">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="habilidades-titulo">Habilidades</h2>
+          <p>Lo que uso y dónde lo he aplicado. Marqué lo que sigo aprendiendo para ser claro sobre mi nivel.</p>
+        </header>
+        <div class="skills">
+          <section class="skill-group" aria-labelledby="s1">
+            <h3 id="s1">Servidores y redes</h3>
+            <ul class="tags">
+              <li>Windows Server</li><li>Ubuntu Server</li><li>IIS</li><li>FTP</li><li>Active Directory</li><li>DNS</li><li>Máquinas virtuales</li>
+            </ul>
+          </section>
+          <section class="skill-group" aria-labelledby="s2">
+            <h3 id="s2">Bases de datos y datos</h3>
+            <ul class="tags">
+              <li>SQL Server</li><li>MySQL</li><li>SSIS</li><li>Cubos multidimensionales</li><li>Excel con tablas dinámicas</li>
+            </ul>
+          </section>
+          <section class="skill-group" aria-labelledby="s3">
+            <h3 id="s3">Desarrollo web</h3>
+            <ul class="tags">
+              <li>HTML</li><li>CSS</li><li>PHP, en proyectos de equipo</li><li class="learning">JavaScript, iniciando</li>
+            </ul>
+          </section>
+          <section class="skill-group" aria-labelledby="s4">
+            <h3 id="s4">Lenguajes</h3>
+            <ul class="tags">
+              <li>SQL</li><li class="learning">C#, aprendiendo</li><li class="learning">Python, aprendiendo</li>
+            </ul>
+          </section>
+          <section class="skill-group" aria-labelledby="s5">
+            <h3 id="s5">Hardware y automatización</h3>
+            <ul class="tags">
+              <li>Mantenimiento preventivo de equipos</li><li>Optimización de equipos de cómputo</li><li class="learning">ABB RobotStudio, curso por iniciar</li>
+            </ul>
+          </section>
+          <section class="skill-group" aria-labelledby="s6">
+            <h3 id="s6">Herramientas e idiomas</h3>
+            <ul class="tags">
+              <li>Git</li><li>GitHub</li><li>GitHub Desktop</li><li>Chart.js</li><li>Inglés B2</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trayectoria -->
+    <section id="trayectoria" class="section" aria-labelledby="trayectoria-titulo">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="trayectoria-titulo">Trayectoria y formación</h2>
+        </header>
+        <ol class="timeline">
+          <li>
+            <time datetime="2023">2023 a 2027</time>
+            <div>
+              <h3>Ingeniería Informática, ITESI</h3>
+              <p>Instituto Tecnológico Superior de Irapuato. Voy en séptimo semestre. He cursado bases de datos, administración de servidores, inteligencia de negocios y calidad de sistemas de información.</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2020">2020 a 2023</time>
+            <div>
+              <h3>Preparatoria, CECyTEG Irapuato II</h3>
+              <p>En el servicio social di mantenimiento preventivo a más de 30 equipos de cómputo. Después ayudé a cambiar y optimizar las computadoras de un centro de cómputo de una secundaria.</p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2017">2017 a 2020</time>
+            <div>
+              <h3>Telesecundaria</h3>
+              <p>Llegué a semifinales en un concurso de canto grupal del Himno Nacional Mexicano.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="extras">
+          <section aria-labelledby="e1">
+            <h3 id="e1">Concursos y actividades</h3>
+            <ul>
+              <li>Tercer lugar en un concurso de canto individual (preparatoria).</li>
+              <li>Primer lugar en un torneo de kick boxing y cinta naranja.</li>
+              <li>Proyecto institucional: tienda Mala Fama Games, con el equipo Mala Fama Crew del ITESI.</li>
+            </ul>
+          </section>
+          <section aria-labelledby="e2">
+            <h3 id="e2">Certificaciones</h3>
+            <p>Todavía no tengo certificaciones. El siguiente paso es el curso de ABB RobotStudio.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section section-contact" aria-labelledby="contacto-titulo">
+      <div class="wrap contact-grid">
+        <div class="contact-intro">
+          <h2 id="contacto-titulo">Contacto</h2>
+          <p>Busco prácticas profesionales y proyectos donde pueda aprender y aportar en servidores, redes o datos. Cuéntame qué necesitas y te respondo por correo.</p>
+          <ul class="contact-links">
+            <li><a href="mailto:juanpgonzalez116@gmail.com">juanpgonzalez116@gmail.com</a></li>
+            <li><a href="https://github.com/JuanPablo814" target="_blank" rel="noopener">github.com/JuanPablo814</a></li>
+            <!-- Agrega aquí tu LinkedIn cuando lo crees:
+            <li><a href="https://www.linkedin.com/in/TU-USUARIO" target="_blank" rel="noopener">LinkedIn</a></li> -->
+          </ul>
+        </div>
+
+        <form id="form-contacto" class="contact-form" novalidate>
+          <div class="field">
+            <label for="nombre">Tu nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required minlength="2" aria-describedby="nombre-error">
+            <p class="error" id="nombre-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="correo">Tu correo</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" required aria-describedby="correo-error">
+            <p class="error" id="correo-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required minlength="20" aria-describedby="mensaje-error"></textarea>
+            <p class="error" id="mensaje-error" role="alert"></p>
+          </div>
+          <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Juan Pablo González Martínez, Irapuato, Guanajuato. Sitio hecho con HTML, CSS y JavaScript.</p>
+      <p><a href="#inicio">Volver arriba</a></p>
+    </div>
+  </footer>
+
+  <!-- Vista detallada: Mala Fama Games -->
+  <dialog id="modal-mala-fama" class="modal" aria-labelledby="modal-titulo">
+    <div class="modal-inner">
+      <header class="modal-head">
+        <h2 id="modal-titulo">Mala Fama Games: arquitectura, retos y resultados</h2>
+        <button type="button" class="modal-close" data-close-modal aria-label="Cerrar vista detallada">Cerrar</button>
+      </header>
+
+      <section aria-labelledby="m-arq">
+        <h3 id="m-arq">Arquitectura</h3>
+        <p>La tienda tiene tres capas. El navegador muestra páginas HTML, CSS y JavaScript. El servidor PHP genera las páginas y expone una API REST. La información vive en una base de datos MySQL.</p>
+        <ol class="arch" aria-label="Capas del sistema">
+          <li><strong>Navegador</strong><span>Catálogo con buscador y filtros, carrito, cuenta de cliente y panel de administración.</span></li>
+          <li><strong>Servidor PHP</strong><span>Páginas, sesiones, reglas de negocio y API REST.</span></li>
+          <li><strong>Base de datos MySQL</strong><span>Juegos, inventario, pedidos, códigos digitales, clientes y puntos.</span></li>
+        </ol>
+        <p>El repositorio separa el código en carpetas: <code>api</code>, <code>css</code>, <code>js</code>, <code>includes</code>, <code>base de datos</code>, <code>docs</code> e <code>img</code>.</p>
+        <h4>Mi módulo</h4>
+        <ul>
+          <li>Cuentas de usuario y panel de cliente, con historial de pedidos y puntos.</li>
+          <li>Panel de administración con tablero, gráficas y reportes por fechas con descarga en CSV.</li>
+          <li>Páginas legales: términos, devoluciones y privacidad.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="m-retos">
+        <h3 id="m-retos">Retos técnicos</h3>
+        <ul>
+          <li><strong>Cancelar sin dejar datos inconsistentes.</strong> Al cancelar un pedido, el sistema regresa el inventario, anula los códigos digitales y ajusta los puntos del cliente en un solo paso.</li>
+          <li><strong>Pagos que parecen reales sin serlo.</strong> El pago es simulado: no cobra, no envía nada y no guarda datos de tarjeta. La tienda lo avisa al cliente.</li>
+          <li><strong>Cuatro módulos en un solo repositorio.</strong> Coordinamos el trabajo con Git y GitHub Desktop, con commits por módulo.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="m-res">
+        <h3 id="m-res">Resultados</h3>
+        <dl class="metrics">
+          <div><dt>Juegos en el catálogo</dt><dd>21</dd></div>
+          <div><dt>Géneros</dt><dd>8</dd></div>
+          <div><dt>Commits en la rama principal</dt><dd>29</dd></div>
+          <div><dt>Integrantes del equipo</dt><dd>4</dd></div>
+        </dl>
+        <p>El código está escrito en PHP (54,2 %), CSS (23,1 %) y JavaScript (22,7 %), según GitHub.</p>
+        <div class="modal-shots">
+          <img src="assets/img/mala-fama-games-catalogo.webp" width="1200" height="580" loading="lazy" alt="Catálogo de Mala Fama Games con buscador y filtros por formato, precio y calificación.">
+          <img src="assets/img/mala-fama-games-juego.webp" width="1200" height="580" loading="lazy" alt="Página de Marvel's Spider-Man 2 con versión estándar y deluxe, formato físico o digital.">
+        </div>
+        <p class="modal-links"><a href="https://github.com/alejandrosanch3z010-ui/malafama-games" target="_blank" rel="noopener">Ver el repositorio en GitHub</a></p>
+      </section>
+    </div>
+  </dialog>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
