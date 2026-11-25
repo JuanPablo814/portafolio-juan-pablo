@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" role="img" aria-labelledby="t d">
+  <title id="t">Diagrama del servidor Windows Server con IIS y FTP</title>
+  <desc id="d">Un cliente se conecta por HTTP al sitio web de IIS y por FTP al sitio FTP_Servidor. Ambos viven en una máquina virtual con Windows Server. El sitio FTP guarda archivos en C:\FTP para el grupo FTP_Usuarios.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#9FB0C8"/></marker>
+  </defs>
+  <rect width="1200" height="580" fill="#0E1726"/>
+  <g fill="none" stroke="#1B2A44" stroke-width="1"><path d="M0 145H1200M0 290H1200M0 435H1200M300 0V580M600 0V580M900 0V580"/></g>
+  <g font-family="'IBM Plex Sans','Segoe UI',Arial,sans-serif" fill="#E8EEF7">
+    <rect x="50" y="215" width="230" height="150" rx="14" fill="#14223A" stroke="#33466A" stroke-width="2"/>
+    <text x="165" y="275" font-size="30" font-weight="700" text-anchor="middle">Cliente</text>
+    <text x="165" y="315" font-size="24" text-anchor="middle" fill="#9FB0C8">Navegador y</text>
+    <text x="165" y="345" font-size="24" text-anchor="middle" fill="#9FB0C8">cliente FTP</text>
+
+    <rect x="400" y="60" width="430" height="460" rx="18" fill="#101C32" stroke="#33466A" stroke-width="2"/>
+    <text x="615" y="108" font-size="28" font-weight="700" text-anchor="middle">Windows Server</text>
+    <text x="615" y="140" font-size="22" text-anchor="middle" fill="#9FB0C8">máquina virtual, dominio SERVIDORE</text>
+
+    <rect x="440" y="180" width="350" height="140" rx="12" fill="#14223A" stroke="#5B8DFF" stroke-width="3"/>
+    <text x="615" y="235" font-size="30" font-weight="700" text-anchor="middle" fill="#8FB0FF">IIS</text>
+    <text x="615" y="275" font-size="24" text-anchor="middle">Sitio web con dominio</text>
+
+    <rect x="440" y="360" width="350" height="140" rx="12" fill="#14223A" stroke="#FF8A3D" stroke-width="3"/>
+    <text x="615" y="415" font-size="30" font-weight="700" text-anchor="middle" fill="#FFB27E">FTP</text>
+    <text x="615" y="455" font-size="24" text-anchor="middle">Sitio FTP_Servidor</text>
+
+    <rect x="930" y="360" width="230" height="140" rx="12" fill="#14223A" stroke="#3DD6A0" stroke-width="3"/>
+    <text x="1045" y="415" font-size="30" font-weight="700" text-anchor="middle" fill="#7FE8C4">C:\FTP</text>
+    <text x="1045" y="455" font-size="22" text-anchor="middle">Grupo FTP_Usuarios</text>
+  </g>
+  <g stroke="#9FB0C8" stroke-width="3" fill="none" marker-end="url(#a)">
+    <path d="M280 265L440 250" stroke="#5B8DFF"/>
+    <path d="M280 315L440 430" stroke="#FF8A3D"/>
+    <path d="M790 430H930" stroke="#3DD6A0"/>
+  </g>
+  <g font-family="'IBM Plex Sans','Segoe UI',Arial,sans-serif" font-size="22" fill="#9FB0C8">
+    <text x="330" y="236">HTTP</text>
+    <text x="318" y="396">FTP</text>
+  </g>
+</svg>
