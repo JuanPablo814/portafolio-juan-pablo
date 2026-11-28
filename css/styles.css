@@ -169,29 +169,54 @@ body { margin: 0; background: #04060d; }
 .jp .hero-value { margin-bottom: 1.8rem; color: var(--muted); }
 .jp .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
 .jp .hero-map { margin: 0; }
-.jp .topology { width: 100%; max-width: 520px; margin-inline: auto; filter: drop-shadow(0 0 30px rgba(41, 214, 255, 0.12)); }
+.jp .topology { width: 100%; max-width: 560px; margin-inline: auto; overflow: visible; filter: drop-shadow(0 0 34px rgba(41, 214, 255, 0.12)); }
+.jp .topology .ring-faint { stroke: rgba(160, 190, 255, 0.28); stroke-width: 1.5; }
+.jp .topology .ring-solid { stroke: rgba(120, 160, 255, 0.14); stroke-width: 1; }
+.jp .topology .ring-dash { stroke: rgba(41, 214, 255, 0.4); stroke-width: 1.5; }
+.jp .topology .orbit { transform-origin: 280px 250px; }
+.jp .topology .packet { offset-rotate: 0deg; opacity: 0; filter: drop-shadow(0 0 6px currentColor); }
+.jp .topology .chips rect { fill: rgba(8, 14, 32, 0.9); stroke: rgba(120, 160, 255, 0.35); stroke-width: 1; }
+.jp .topology .chips text { font: 500 11.5px var(--font-body); fill: var(--soft); }
 .jp .topology .node { cursor: pointer; }
-.jp .topology .node circle { fill: #0a1228; stroke-width: 3; transition: fill 0.2s ease, stroke-width 0.2s ease; }
-.jp .topology .node:hover circle, .jp .topology .node:focus-visible circle { fill: #112148; stroke-width: 5; }
+.jp .topology .node .halo { fill: none; stroke-width: 1.5; stroke-opacity: 0.35; stroke-dasharray: 2 6; transform-box: fill-box; transform-origin: center; transition: stroke-opacity 0.25s ease, transform 0.4s ease; }
+.jp .topology .node .body { fill: url(#grad-nodo); stroke-width: 3; transition: stroke-width 0.2s ease, filter 0.2s ease; }
+.jp .topology .node:hover .body, .jp .topology .node:focus-visible .body { stroke-width: 5; filter: drop-shadow(0 0 10px currentColor); }
+.jp .topology .node:hover .halo, .jp .topology .node:focus-visible .halo { stroke-opacity: 0.9; transform: scale(1.06); }
 .jp .topology .node:focus-visible { outline: none; }
-.jp .topology .node:focus-visible circle { stroke: var(--amber); }
+.jp .topology .node:focus-visible .body { stroke: var(--amber); }
+.jp .topology .n1 { color: #29d6ff; }
+.jp .topology .n2 { color: #ff3ea5; }
+.jp .topology .n3 { color: #3dd6a0; }
+.jp .topology .n4 { color: #e6c84f; }
 .jp .topology .t-main { font: 600 16px var(--font-body); fill: var(--text); }
 .jp .topology .t-sub { font: 400 11.5px var(--font-body); fill: var(--muted); }
-.jp .topology .t-center { font: 700 38px var(--font-display); fill: #04060d; }
+.jp .topology .t-center { font: 700 40px var(--font-display); fill: #04060d; }
 @media (prefers-reduced-motion: no-preference) {
   .jp .topology .links path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-link 0.9s ease-out forwards; }
   .jp .topology .l1 { animation-delay: 0.25s; }
   .jp .topology .l2 { animation-delay: 0.45s; }
   .jp .topology .l3 { animation-delay: 0.65s; }
   .jp .topology .l4 { animation-delay: 0.85s; }
-  .jp .topology .node, .jp .topology .node-center { opacity: 0; animation: show-node 0.4s ease-out forwards; }
+  .jp .topology .node, .jp .topology .node-center, .jp .topology .chips { opacity: 0; animation: show-node 0.4s ease-out forwards; }
+  .jp .topology .node-center { animation-delay: 0s; }
   .jp .topology .n1 { animation-delay: 0.9s; }
   .jp .topology .n2 { animation-delay: 1.1s; }
   .jp .topology .n3 { animation-delay: 1.3s; }
   .jp .topology .n4 { animation-delay: 1.5s; }
+  .jp .topology .chips { animation-delay: 1.8s; }
+  .jp .topology .orbit-a { animation: spin 70s linear infinite; }
+  .jp .topology .orbit-b { animation: spin 110s linear infinite reverse; }
+  .jp .topology .hub-ring { transform-box: fill-box; transform-origin: center; animation: spin 24s linear infinite; }
+  .jp .topology .packet { animation: travel 4.8s linear infinite; }
+  .jp .topology .p1 { animation-delay: 2.2s; }
+  .jp .topology .p2 { animation-delay: 3.4s; color: #ff3ea5; }
+  .jp .topology .p3 { animation-delay: 4.1s; }
+  .jp .topology .p4 { animation-delay: 5s; }
 }
 @keyframes draw-link { to { stroke-dashoffset: 0; } }
 @keyframes show-node { to { opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes travel { 0% { offset-distance: 0%; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
 .jp .section { padding: 4.5rem 0; }
 .jp .section-head { margin-bottom: 2rem; }
 .jp .section-head p { color: var(--muted); }
@@ -229,10 +254,7 @@ body { margin: 0; background: #04060d; }
 .jp .project.is-hidden { display: none !important; }
 .jp .shot-frame { position: relative; z-index: 1; margin: 1rem 1rem 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #05070f; }
 .jp .shot-bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.7rem; border-bottom: 1px solid var(--line); background: #0b1226; }
-.jp .shot-bar span { width: 9px; height: 9px; border-radius: 50%; background: #ff5f57; }
-.jp .shot-bar span:nth-child(2) { background: #febc2e; }
-.jp .shot-bar span:nth-child(3) { background: #28c840; }
-.jp .shot-bar em { margin-left: 0.6rem; overflow: hidden; color: var(--muted); font-size: 0.74rem; font-style: normal; text-overflow: ellipsis; white-space: nowrap; }
+.jp .shot-bar em { margin-left: 0; overflow: hidden; color: var(--muted); font-size: 0.74rem; font-style: normal; text-overflow: ellipsis; white-space: nowrap; }
 .jp .project-shot { width: 100%; aspect-ratio: 1200 / 580; object-fit: cover; transition: transform 0.5s ease; }
 .jp .project:hover .project-shot { transform: scale(1.04); }
 .jp .project-body { position: relative; z-index: 1; display: flex; flex-direction: column; padding: 1.25rem 1.5rem 1.6rem; }
@@ -381,8 +403,8 @@ html.jp-modal-open { overflow: hidden; }
   .jp .modal-head { margin: -1.5rem -2.5rem 1rem; padding: 1rem 2.5rem; }
 }
 @media (max-width: 519px) {
-  .jp .topology .t-sub { display: none; }
-  .jp .topology .t-main { font-size: 17px; }
+  .jp .topology .t-sub, .jp .topology .chips { display: none; }
+  .jp .topology .t-main { font-size: 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .jp .bg-stars { animation: none; }
