@@ -19,17 +19,18 @@ Portafolio profesional individual de un estudiante de Ingeniería Informática d
 ## Secciones
 
 - **Inicio:** nombre, especialización, propuesta de valor en dos líneas, botón para descargar el CV en PDF y enlaces a GitHub y contacto. Incluye un mapa interactivo de mis áreas de trabajo.
-- **Proyectos:** cinco proyectos con captura o diagrama, problema que resuelven, tecnologías, enlace al código y a la demo cuando existen. Mala Fama Games tiene una vista detallada (modal) con arquitectura, retos técnicos y resultados.
-- **Habilidades:** clasificadas por área, sin barras de porcentaje. Lo que sigo aprendiendo está marcado con borde punteado.
+- **Proyectos:** cinco proyectos con filtros por tipo, captura o diagrama dentro de un marco de navegador, problema que resuelven, tecnologías, enlace al código y a la demo cuando existen. Mala Fama Games tiene una vista detallada (modal) con arquitectura, retos técnicos y resultados.
+- **Habilidades:** clasificadas por área, con ícono por tecnología y sin barras de porcentaje. Lo que sigo aprendiendo está marcado con borde punteado.
 - **Trayectoria y formación:** línea del tiempo académica, concursos, actividades y certificaciones.
 - **Contacto:** formulario con validación en el cliente y enlaces a GitHub y correo.
 
 ## Tecnologías
 
 - HTML5 semántico (`header`, `main`, `section`, `article`, `footer`, `dialog`)
-- CSS3 con variables, Grid y Flexbox, diseño mobile-first
-- JavaScript sin librerías: menú móvil, vista detallada accesible, sección activa y validación del formulario
-- Tipografías Bricolage Grotesque e IBM Plex Sans (Google Fonts)
+- CSS3 con variables, Grid y Flexbox, diseño mobile-first y estilo neón oscuro
+- JavaScript sin librerías: luz que sigue al mouse, animación al hacer scroll, tarjetas con inclinación, filtros de proyectos, vista detallada accesible, sección activa y validación del formulario
+- Tipografías Chakra Petch y Poppins (Google Fonts)
+- Íconos de tecnologías de [Devicon](https://devicon.dev/) (licencia MIT), guardados localmente en `assets/icons`, y íconos propios en SVG
 - Imágenes en WebP y diagramas en SVG
 
 ## Estructura de carpetas
@@ -39,6 +40,7 @@ Portafolio profesional individual de un estudiante de Ingeniería Informática d
 ├── index.html
 ├── README.md
 ├── assets/
+│   ├── icons/          Íconos de tecnologías (SVG)
 │   └── img/            Capturas de proyectos (WebP), diagrama y favicon (SVG)
 ├── css/
 │   └── styles.css
@@ -55,7 +57,9 @@ Portafolio profesional individual de un estudiante de Ingeniería Informática d
 - Enlace para saltar al contenido, foco visible, etiquetas en todos los campos y mensajes de error con `role="alert"`.
 - Todas las imágenes tienen texto alternativo, ancho y alto definidos y carga diferida.
 - Imágenes de proyectos en WebP de entre 20 y 45 KB cada una.
-- Respeta la preferencia de movimiento reducido del sistema.
+- Respeta la preferencia de movimiento reducido del sistema: sin animaciones de entrada ni inclinación.
+- Los efectos del mouse solo se activan en dispositivos con mouse.
+- Todo el CSS está limitado al contenedor `.jp`, para que no choque con otros portafolios si se juntan en un mismo sitio.
 - No usa frameworks ni librerías externas de JavaScript.
 
 ## Cómo ejecutarlo en local
