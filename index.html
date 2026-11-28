@@ -69,43 +69,111 @@
         </div>
 
         <figure class="hero-map">
-          <svg class="topology" viewBox="0 0 520 460" role="group" aria-labelledby="mapa-titulo mapa-desc">
+          <svg class="topology" viewBox="0 0 560 500" role="group" aria-labelledby="mapa-titulo mapa-desc">
             <title id="mapa-titulo">Mapa de mis áreas de trabajo</title>
             <desc id="mapa-desc">Juan Pablo al centro, conectado con servidores, bases de datos, desarrollo web y control de versiones. Cada nodo lleva a una sección de la página.</desc>
             <defs>
               <linearGradient id="grad-centro" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0" stop-color="#29d6ff"/><stop offset="1" stop-color="#ff3ea5"/>
               </linearGradient>
+              <linearGradient id="grad-anillo" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#29d6ff" stop-opacity=".9"/><stop offset="1" stop-color="#ff3ea5" stop-opacity=".9"/>
+              </linearGradient>
+              <radialGradient id="grad-nodo" cx="50%" cy="35%" r="75%">
+                <stop offset="0" stop-color="#14264f"/><stop offset="1" stop-color="#080e22"/>
+              </radialGradient>
+              <radialGradient id="grad-halo" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#29d6ff" stop-opacity=".22"/><stop offset="1" stop-color="#29d6ff" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="brillo" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3.2" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
             </defs>
-            <g class="links" aria-hidden="true" fill="none" stroke-width="3" stroke-linecap="round">
-              <path pathLength="1" class="l1" d="M260 230L100 100" stroke="#29d6ff"/>
-              <path pathLength="1" class="l2" d="M260 230L430 90" stroke="#ff3ea5"/>
-              <path pathLength="1" class="l3" d="M260 230L440 370" stroke="#3dd6a0"/>
-              <path pathLength="1" class="l4" d="M260 230L90 380" stroke="#e6c84f"/>
+
+            <!-- Anillos de órbita -->
+            <g class="rings" aria-hidden="true" fill="none">
+              <circle cx="280" cy="250" r="230" class="ring-faint" stroke-dasharray="2 8"/>
+              <circle cx="280" cy="250" r="95" class="ring-solid"/>
+              <circle cx="280" cy="250" r="190" class="ring-solid"/>
+              <g class="orbit orbit-a">
+                <circle cx="280" cy="250" r="150" class="ring-dash" stroke-dasharray="3 9"/>
+                <circle cx="430" cy="250" r="4" fill="#29d6ff" filter="url(#brillo)"/>
+                <circle cx="130" cy="250" r="3" fill="#ff3ea5" filter="url(#brillo)"/>
+                <circle cx="280" cy="100" r="3" fill="#e6c84f"/>
+              </g>
+              <g class="orbit orbit-b">
+                <circle cx="280" cy="250" r="215" class="ring-dash" stroke-dasharray="1 14"/>
+                <circle cx="280" cy="35" r="3.5" fill="#3dd6a0" filter="url(#brillo)"/>
+                <circle cx="280" cy="465" r="3" fill="#29d6ff"/>
+              </g>
             </g>
-            <a href="#habilidades" class="node n1">
-              <circle cx="100" cy="100" r="58" stroke="#29d6ff"/>
-              <text x="100" y="96" text-anchor="middle" class="t-main">Servidores</text>
-              <text x="100" y="116" text-anchor="middle" class="t-sub">Windows, Ubuntu</text>
+
+            <!-- Conexiones -->
+            <g class="links" aria-hidden="true" fill="none" stroke-linecap="round">
+              <path pathLength="1" class="l1" d="M280 250 Q215 150 120 115" stroke="#29d6ff" stroke-width="2.5" filter="url(#brillo)"/>
+              <path pathLength="1" class="l2" d="M280 250 Q370 140 440 105" stroke="#ff3ea5" stroke-width="2.5" filter="url(#brillo)"/>
+              <path pathLength="1" class="l3" d="M280 250 Q380 360 445 395" stroke="#3dd6a0" stroke-width="2.5" filter="url(#brillo)"/>
+              <path pathLength="1" class="l4" d="M280 250 Q200 370 115 395" stroke="#e6c84f" stroke-width="2.5" filter="url(#brillo)"/>
+            </g>
+
+            <!-- Paquetes de datos que viajan por las conexiones -->
+            <g class="packets" aria-hidden="true">
+              <circle class="packet p1" r="4.5" fill="#29d6ff" style="offset-path: path('M280 250 Q215 150 120 115')"/>
+              <circle class="packet p2" r="4.5" fill="#ff3ea5" style="offset-path: path('M440 105 Q370 140 280 250')"/>
+              <circle class="packet p3" r="4.5" fill="#3dd6a0" style="offset-path: path('M280 250 Q380 360 445 395')"/>
+              <circle class="packet p4" r="4.5" fill="#e6c84f" style="offset-path: path('M115 395 Q200 370 280 250')"/>
+            </g>
+
+            <!-- Etiquetas de herramientas -->
+            <g class="chips" aria-hidden="true">
+              <g><rect x="188" y="42" width="46" height="24" rx="12"/><text x="211" y="58" text-anchor="middle">IIS</text></g>
+              <g><rect x="22" y="205" width="42" height="24" rx="12"/><text x="43" y="221" text-anchor="middle">FTP</text></g>
+              <g><rect x="458" y="182" width="64" height="24" rx="12"/><text x="490" y="198" text-anchor="middle">MySQL</text></g>
+              <g><rect x="470" y="462" width="46" height="24" rx="12"/><text x="493" y="478" text-anchor="middle">PHP</text></g>
+              <g><rect x="38" y="464" width="70" height="24" rx="12"/><text x="73" y="480" text-anchor="middle">GitHub</text></g>
+            </g>
+
+            <!-- Nodos -->
+            <a href="#habilidades" class="node n1" aria-label="Servidores, Windows y Ubuntu. Ir a habilidades">
+              <circle cx="120" cy="115" r="82" fill="url(#grad-halo)"/>
+              <circle class="halo" cx="120" cy="115" r="68" stroke="#29d6ff"/>
+              <circle class="body" cx="120" cy="115" r="58" stroke="#29d6ff"/>
+              <image href="assets/icons/server.svg" x="107" y="73" width="26" height="26" alt=""/>
+              <text x="120" y="119" text-anchor="middle" class="t-main">Servidores</text>
+              <text x="120" y="137" text-anchor="middle" class="t-sub">Windows, Ubuntu</text>
             </a>
-            <a href="#habilidades" class="node n2">
-              <circle cx="430" cy="90" r="58" stroke="#ff3ea5"/>
-              <text x="430" y="86" text-anchor="middle" class="t-main">Datos</text>
-              <text x="430" y="106" text-anchor="middle" class="t-sub">SQL Server, SSIS</text>
+            <a href="#habilidades" class="node n2" aria-label="Datos, SQL Server y SSIS. Ir a habilidades">
+              <circle cx="440" cy="105" r="82" fill="url(#grad-halo)"/>
+              <circle class="halo" cx="440" cy="105" r="68" stroke="#ff3ea5"/>
+              <circle class="body" cx="440" cy="105" r="58" stroke="#ff3ea5"/>
+              <image href="assets/icons/sql.svg" x="427" y="63" width="26" height="26" alt=""/>
+              <text x="440" y="109" text-anchor="middle" class="t-main">Datos</text>
+              <text x="440" y="127" text-anchor="middle" class="t-sub">SQL Server, SSIS</text>
             </a>
-            <a href="#proyectos" class="node n3">
-              <circle cx="440" cy="370" r="58" stroke="#3dd6a0"/>
-              <text x="440" y="366" text-anchor="middle" class="t-main">Web</text>
-              <text x="440" y="386" text-anchor="middle" class="t-sub">HTML, CSS, PHP</text>
+            <a href="#proyectos" class="node n3" aria-label="Web, HTML, CSS y PHP. Ir a proyectos">
+              <circle cx="445" cy="395" r="82" fill="url(#grad-halo)"/>
+              <circle class="halo" cx="445" cy="395" r="68" stroke="#3dd6a0"/>
+              <circle class="body" cx="445" cy="395" r="58" stroke="#3dd6a0"/>
+              <image href="assets/icons/html5.svg" x="432" y="353" width="26" height="26" alt=""/>
+              <text x="445" y="399" text-anchor="middle" class="t-main">Web</text>
+              <text x="445" y="417" text-anchor="middle" class="t-sub">HTML, CSS, PHP</text>
             </a>
-            <a href="#proyectos" class="node n4">
-              <circle cx="90" cy="380" r="58" stroke="#e6c84f"/>
-              <text x="90" y="376" text-anchor="middle" class="t-main">Equipo</text>
-              <text x="90" y="396" text-anchor="middle" class="t-sub">Git y GitHub</text>
+            <a href="#proyectos" class="node n4" aria-label="Equipo, Git y GitHub. Ir a proyectos">
+              <circle cx="115" cy="395" r="82" fill="url(#grad-halo)"/>
+              <circle class="halo" cx="115" cy="395" r="68" stroke="#e6c84f"/>
+              <circle class="body" cx="115" cy="395" r="58" stroke="#e6c84f"/>
+              <image href="assets/icons/git.svg" x="102" y="353" width="26" height="26" alt=""/>
+              <text x="115" y="399" text-anchor="middle" class="t-main">Equipo</text>
+              <text x="115" y="417" text-anchor="middle" class="t-sub">Git y GitHub</text>
             </a>
+
+            <!-- Centro -->
             <g class="node-center">
-              <circle cx="260" cy="230" r="58" fill="url(#grad-centro)"/>
-              <text x="260" y="243" text-anchor="middle" class="t-center">JP</text>
+              <circle cx="280" cy="250" r="78" fill="url(#grad-halo)"/>
+              <circle cx="280" cy="250" r="64" fill="none" stroke="url(#grad-anillo)" stroke-width="2" stroke-dasharray="4 7" class="hub-ring"/>
+              <circle cx="280" cy="250" r="52" fill="url(#grad-centro)" filter="url(#brillo)"/>
+              <text x="280" y="264" text-anchor="middle" class="t-center">JP</text>
             </g>
           </svg>
           <figcaption class="visually-hidden">Mapa visual de mis áreas de trabajo.</figcaption>
@@ -132,7 +200,7 @@
           <!-- 1. Mala Fama Games (destacado) -->
           <article class="project project-featured jp-reveal" data-kind="web" data-tilt aria-labelledby="p1-titulo">
             <div class="shot-frame">
-              <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span><em>malafama-games</em></div>
+              <div class="shot-bar" aria-hidden="true"><em>malafama-games</em></div>
               <img class="project-shot" src="assets/img/mala-fama-games-inicio.webp" width="1200" height="580" loading="lazy" decoding="async" alt="Página de inicio de Mala Fama Games, una tienda de juegos de PS5 con catálogo y preventas.">
             </div>
             <div class="project-body">
@@ -159,7 +227,7 @@
           <!-- 2. Servidor Windows -->
           <article class="project jp-reveal" data-kind="infra" data-tilt aria-labelledby="p2-titulo">
             <div class="shot-frame">
-              <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span><em>windows-server</em></div>
+              <div class="shot-bar" aria-hidden="true"><em>windows-server</em></div>
               <img class="project-shot" src="assets/img/servidor-windows.svg" width="1200" height="580" loading="lazy" alt="Diagrama: un cliente se conecta por HTTP al sitio de IIS y por FTP al sitio FTP_Servidor, dentro de una máquina virtual con Windows Server.">
             </div>
             <div class="project-body">
@@ -182,7 +250,7 @@
           <!-- 3. Codex 616 -->
           <article class="project jp-reveal" data-kind="web" data-tilt aria-labelledby="p3-titulo">
             <div class="shot-frame">
-              <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span><em>codex616.malafamacrew.com</em></div>
+              <div class="shot-bar" aria-hidden="true"><em>codex616.malafamacrew.com</em></div>
               <img class="project-shot" src="assets/img/codex-616.webp" width="1200" height="579" loading="lazy" decoding="async" alt="Página de inicio de Códex 616, un archivo de héroes del cómic con 22 personajes y 8 categorías.">
             </div>
             <div class="project-body">
@@ -206,7 +274,7 @@
           <!-- 4. Hotel Nébula -->
           <article class="project jp-reveal" data-kind="web" data-tilt aria-labelledby="p4-titulo">
             <div class="shot-frame">
-              <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span><em>hotel-nebula</em></div>
+              <div class="shot-bar" aria-hidden="true"><em>hotel-nebula</em></div>
               <img class="project-shot" src="assets/img/hotel-nebula.webp" width="1200" height="580" loading="lazy" decoding="async" alt="Página de inicio de Hotel Nébula, un hotel boutique de cuatro estrellas en Irapuato.">
             </div>
             <div class="project-body">
@@ -229,7 +297,7 @@
           <!-- 5. Galería arte urbano -->
           <article class="project jp-reveal" data-kind="web" data-tilt aria-labelledby="p5-titulo">
             <div class="shot-frame">
-              <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span><em>mala-fama</em></div>
+              <div class="shot-bar" aria-hidden="true"><em>mala-fama</em></div>
               <img class="project-shot" src="assets/img/galeria-arte-urbano.webp" width="1200" height="579" loading="lazy" decoding="async" alt="Página de inicio de la galería web de arte urbano de Mala Fama, con un búho de grafiti.">
             </div>
             <div class="project-body">
